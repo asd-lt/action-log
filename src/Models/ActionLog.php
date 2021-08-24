@@ -53,4 +53,17 @@ class ActionLog extends Model
     {
         return $this->belongsToMany(ActionLogField::class, 'action_log_pivot', 'action_log_id');
     }
+
+    /**
+     * User relation
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        $guard = config('auth.defaults.action_log_guard', config('auth.defaults.guard'));
+        $provider = config("auth.guards.{$guard}.provider");
+        $userClass = config("auth.providers.{$provider}.model");
+        return $this->belongsTo($userClass, 'user_id', 'id');
+    }
 }

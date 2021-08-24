@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.3] - 2021-08-24
+### Added
+- Added user relationship to ActionLog, relationship class is retrieved from guard provider config.
+
 ## [1.0.2] - 2021-08-24
 ### Added
 - Changelog
