@@ -7,7 +7,7 @@ Laravel library for logging desired column changes in models
 Use the package manager [composer](https://getcomposer.org/download/) to install Action log.
 
 ```bash
-composer required asd-lt/action-log
+composer require asd-lt/action-log
 ```
 
 Copy migration
