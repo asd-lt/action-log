@@ -1,5 +1,5 @@
 {
-  "name": "asdlt/action-log",
+  "name": "asd-lt/action-log",
   "description": "Laravel library for logging desired column changes in models",
   "type": "library",
   "license": "MIT",
