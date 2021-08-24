@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.4] - 2021-08-24
+### Fixed
+- Relationship in trait fixed - added model constraint.
+
 ## [1.0.3] - 2021-08-24
 ### Added
 - Added user relationship to ActionLog, relationship class is retrieved from guard provider config.

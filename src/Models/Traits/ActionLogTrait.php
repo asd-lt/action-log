@@ -136,7 +136,7 @@ trait ActionLogTrait
      */
     public function actionLog()
     {
-        return $this->hasMany(ActionLog::class, 'model_id');
+        return $this->hasMany(ActionLog::class, 'model_id')->where('model', static::class);
     }
 
     /**
