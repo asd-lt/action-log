@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.5] - 2021-08-24
+### Added
+- Indexes add where may be needed in migrations.
+
 ## [1.0.4] - 2021-08-24
 ### Fixed
 - Relationship in trait fixed - added model constraint.

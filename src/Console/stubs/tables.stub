@@ -15,23 +15,23 @@ class CreateActionLogTables extends Migration
     {
         Schema::create('action_logs', function (Blueprint $table) {
 			$table->bigIncrements('id');
-			$table->unsignedBigInteger('user_id')->nullable();
-			$table->unsignedBigInteger('model_id');
-			$table->string('model');
-			$table->enum('type', ['created', 'updated', 'deleted']);
-			$table->timestamp('timestamp')->useCurrent();
+			$table->unsignedBigInteger('user_id')->nullable()->index();
+			$table->unsignedBigInteger('model_id')->index();
+			$table->string('model')->index();
+			$table->enum('type', ['created', 'updated', 'deleted'])->index();
+			$table->timestamp('timestamp')->useCurrent()->index();
 		});
 
 		Schema::create('action_log_fields', function (Blueprint $table) {
 			$table->bigIncrements('id');
-			$table->string('field');
+			$table->string('field')->index();
 			$table->text('old')->nullable();
 			$table->text('new')->nullable();
 		});
 
 		Schema::create('action_log_pivot', function (Blueprint $table) {
-			$table->unsignedInteger('action_log_id');
-			$table->unsignedInteger('action_log_field_id');
+			$table->unsignedInteger('action_log_id')->index();
+			$table->unsignedInteger('action_log_field_id')->index();
 		});
     }
 
