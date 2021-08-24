@@ -1,0 +1,26 @@
+{
+  "name": "asdlt/action-log",
+  "description": "Laravel library for logging desired column changes in models",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Simonas Dimavičius",
+      "email": "asd@asd.lt"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Asd\\ActionLog\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Asd\\ActionLog\\Providers\\ArtisanServiceProvider"
+      ]
+    }
+  }
+}

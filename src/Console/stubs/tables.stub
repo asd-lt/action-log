@@ -1,0 +1,49 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateActionLogTables extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('action_logs', function (Blueprint $table) {
+			$table->bigIncrements('id');
+			$table->unsignedBigInteger('user_id')->nullable();
+			$table->unsignedBigInteger('model_id');
+			$table->string('model');
+			$table->enum('type', ['created', 'updated', 'deleted']);
+			$table->timestamp('timestamp')->useCurrent();
+		});
+
+		Schema::create('action_log_fields', function (Blueprint $table) {
+			$table->bigIncrements('id');
+			$table->string('field');
+			$table->text('old')->nullable();
+			$table->text('new')->nullable();
+		});
+
+		Schema::create('action_log_pivot', function (Blueprint $table) {
+			$table->unsignedInteger('action_log_id');
+			$table->unsignedInteger('action_log_field_id');
+		});
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+	{
+		Schema::dropIfExists('action_log_pivot');
+		Schema::dropIfExists('action_log_fields');
+		Schema::dropIfExists('action_logs');
+	}
+}
