@@ -171,6 +171,6 @@ trait ActionLogTrait
     private function getUserId()
     {
         $guard = config('auth.defaults.action_log_guard', config('auth.defaults.guard'));
-        return Auth::guard()->id($guard) ?? null;
+        return Auth::guard($guard)->id() ?? null;
     }
 }

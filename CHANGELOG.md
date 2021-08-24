@@ -4,6 +4,9 @@
 ### Added
 - Added user relationship to ActionLog, relationship class is retrieved from guard provider config.
 
+### Fixed
+- Properly retrieve user ID when saving action log.
+
 ## [1.0.2] - 2021-08-24
 ### Added
 - Changelog
